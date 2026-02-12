@@ -7,4 +7,6 @@ final: prev: {
 
   # relevant software for systems without logind - potentially useful to finix
   pam_xdg = prev.callPackage ../pkgs/pam_xdg { };
+
+  gnu-getopt = prev.callPackage ../pkgs/gnu-getopt { };
 }
