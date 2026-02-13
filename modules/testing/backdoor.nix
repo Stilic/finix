@@ -19,10 +19,10 @@ let
     export HOME=/root
     export PATH=${
       lib.makeBinPath [
-        pkgs.coreutils
+        pkgs.uutils-coreutils-noprefix
         pkgs.gnugrep
         pkgs.gnused
-        pkgs.findutils
+        pkgs.uutils-findutils
         pkgs.netcat
         pkgs.iproute2
         pkgs.iputils

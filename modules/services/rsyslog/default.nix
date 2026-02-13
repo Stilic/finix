@@ -77,7 +77,7 @@ in
           sharedscripts
 
           postrotate
-            ${pkgs.coreutils}/bin/kill -s HUP $(cat /run/rsyslog.pid)
+            ${pkgs.uutils-coreutils-noprefix}/bin/kill -s HUP $(cat /run/rsyslog.pid)
           endscript
         }
       '';

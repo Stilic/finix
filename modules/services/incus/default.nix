@@ -59,11 +59,11 @@ in
           bash
           btrfs-progs
           cdrkit
-          coreutils
+          uutils-coreutils-noprefix
           criu
           dnsmasq
           e2fsprogs
-          findutils
+          uutils-findutils
           getent
           gnugrep
           gnused

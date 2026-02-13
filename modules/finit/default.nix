@@ -806,8 +806,8 @@ in
 
     # TODO: decide a reasonable default here... user can override if needed
     finit.path = [
-      pkgs.coreutils
-      pkgs.findutils
+      pkgs.uutils-coreutils-noprefix
+      pkgs.uutils-findutils
       pkgs.gnugrep
       pkgs.gnused
       cfg.package

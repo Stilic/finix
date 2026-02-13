@@ -145,7 +145,7 @@ in
 
         pre = pkgs.writeShellScript "nzbget-pre.sh" ''
           if [ ! -f ${configFile} ]; then
-            ${pkgs.coreutils}/bin/install -o ${cfg.user} -g ${cfg.group} -m 0700 ${cfg.package}/share/nzbget/nzbget.conf ${configFile}
+            ${pkgs.uutils-coreutils-noprefix}/bin/install -o ${cfg.user} -g ${cfg.group} -m 0700 ${cfg.package}/share/nzbget/nzbget.conf ${configFile}
           fi
         '';
       };

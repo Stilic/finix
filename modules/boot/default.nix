@@ -34,7 +34,7 @@
       command = pkgs.writeShellApplication {
         name = "remount-nix-store.sh";
         runtimeInputs = with pkgs; [
-          coreutils
+          uutils-coreutils-noprefix
           util-linux
         ];
         text = ''

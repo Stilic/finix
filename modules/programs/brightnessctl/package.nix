@@ -5,7 +5,7 @@
   pkg-config,
   logindSupport ? true,
   systemdLibs,
-  coreutils,
+  uutils-coreutils-noprefix,
   udevSupport ? true,
   udevCheckHook,
 }:
@@ -26,7 +26,7 @@ stdenv.mkDerivation rec {
 
   postPatch = ''
     substituteInPlace 90-brightnessctl.rules \
-      --replace-fail /bin/ ${coreutils}/bin/
+      --replace-fail /bin/ ${uutils-coreutils-noprefix}/bin/
   '';
 
   configureFlags = [

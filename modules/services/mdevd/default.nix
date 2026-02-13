@@ -194,7 +194,7 @@ in
       # TODO: now we're hijacking `env` and no one else can use it...
       path = with pkgs; [
         s6-portable-utils
-        coreutils
+        uutils-coreutils-noprefix
         execline
         kmod
         util-linux

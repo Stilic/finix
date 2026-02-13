@@ -46,9 +46,9 @@ let
             --replace-quiet \"/sbin/mdadm \"${pkgs.mdadm}/sbin/mdadm \
             --replace-quiet \"/sbin/blkid \"${pkgs.util-linux}/sbin/blkid \
             --replace-quiet \"/bin/mount \"${pkgs.util-linux}/bin/mount \
-            --replace-quiet /usr/bin/readlink ${pkgs.coreutils}/bin/readlink \
-            --replace-quiet /usr/bin/cat ${pkgs.coreutils}/bin/cat \
-            --replace-quiet /usr/bin/basename ${pkgs.coreutils}/bin/basename 2>/dev/null
+            --replace-quiet /usr/bin/readlink ${pkgs.uutils-coreutils-noprefix}/bin/readlink \
+            --replace-quiet /usr/bin/cat ${pkgs.uutils-coreutils-noprefix}/bin/cat \
+            --replace-quiet /usr/bin/basename ${pkgs.uutils-coreutils-noprefix}/bin/basename 2>/dev/null
         done
 
         echo -n "Checking that all programs called by relative paths in udev rules exist in ${udev}/lib/udev... "

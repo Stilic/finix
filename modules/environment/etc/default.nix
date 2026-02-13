@@ -90,7 +90,7 @@ in
       s6-mkdir -m 0755 -p /usr/bin /bin
 
       # Create /usr/bin/env for shebangs.
-      s6-ln -s -f -n ${pkgs.coreutils}/bin/env /usr/bin/env
+      s6-ln -s -f -n ${pkgs.uutils-coreutils-noprefix}/bin/env /usr/bin/env
 
       # Create the required /bin/sh symlink; otherwise lots of things
       # (notably the system() function) won't work.

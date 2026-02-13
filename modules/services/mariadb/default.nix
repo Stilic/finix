@@ -123,7 +123,7 @@ in
       command = pkgs.writeShellApplication {
         name = "mariadb-init.sh";
         runtimeInputs = with pkgs; [
-          coreutils
+          uutils-coreutils-noprefix
           nettools
           gnused
         ];

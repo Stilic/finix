@@ -43,7 +43,7 @@ in
           fi
         fi
 
-        eval "$(${pkgs.coreutils}/bin/dircolors -b)"
+        eval "$(${pkgs.uutils-coreutils-noprefix}/bin/dircolors -b)"
 
         alias -- ls='ls --color=tty'
       fi

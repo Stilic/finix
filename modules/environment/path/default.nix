@@ -37,8 +37,8 @@
       bzip2
       cpio
       curl
-      diffutils
-      findutils
+      uutils-diffutils
+      uutils-findutils
       getent
       getconf
       gzip
@@ -56,7 +56,7 @@
       zstd
 
       bashInteractive
-      coreutils-full
+      uutils-coreutils-noprefix
       gawk
       gnugrep
       gnupatch

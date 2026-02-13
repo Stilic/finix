@@ -58,9 +58,9 @@ let
             --replace-quiet \"/sbin/mdadm \"${pkgs.mdadm}/sbin/mdadm \
             --replace-quiet \"/sbin/blkid \"${pkgs.util-linux}/sbin/blkid \
             --replace-quiet \"/bin/mount \"${pkgs.util-linux}/bin/mount \
-            --replace-quiet /usr/bin/readlink ${pkgs.coreutils}/bin/readlink \
-            --replace-quiet /usr/bin/cat ${pkgs.coreutils}/bin/cat \
-            --replace-quiet /usr/bin/basename ${pkgs.coreutils}/bin/basename 2>/dev/null
+            --replace-quiet /usr/bin/readlink ${pkgs.uutils-coreutils-noprefix}/bin/readlink \
+            --replace-quiet /usr/bin/cat ${pkgs.uutils-coreutils-noprefix}/bin/cat \
+            --replace-quiet /usr/bin/basename ${pkgs.uutils-coreutils-noprefix}/bin/basename 2>/dev/null
         done
 
         echo -n "Checking that all programs called by relative paths in udev rules exist in ${udev}/lib/udev... "
@@ -214,7 +214,7 @@ in
         Packages added to the {env}`PATH` environment variable when
         executing programs from Udev rules.
 
-        coreutils, gnu{sed,grep}, util-linux
+        uutils-coreutils-noprefix, gnu{sed,grep}, util-linux
         automatically included.
       '';
     };
@@ -223,7 +223,7 @@ in
   config = lib.mkIf cfg.enable {
     # services.udev.packages = [ extraUdevRules extraHwdbFile ];
     services.udev.path = [
-      pkgs.coreutils
+      pkgs.uutils-coreutils-noprefix
       pkgs.gnused
       pkgs.gnugrep
       pkgs.util-linux

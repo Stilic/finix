@@ -64,7 +64,7 @@ in
             defaultText = lib.literalExpression ''
               [
                 ${builtins.dirOf config.security.wrapperDir}
-                pkgs.coreutils
+                pkgs.uutils-coreutils-noprefix
               ]
             '';
             description = ''
@@ -174,7 +174,7 @@ in
     services.cron.settings = {
       PATH = [
         (builtins.dirOf config.security.wrapperDir)
-        pkgs.coreutils
+        pkgs.uutils-coreutils-noprefix
       ];
     };
 

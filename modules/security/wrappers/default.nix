@@ -260,7 +260,7 @@ in
       runlevels = "S12345";
       log = true;
       command = wrappersScript;
-      path = [ pkgs.coreutils ];
+      path = [ pkgs.uutils-coreutils-noprefix ];
     };
 
     synit.milestones.wrappers = { };
@@ -276,7 +276,7 @@ in
         "echo"
         "<service-state <daemon suid-sgid-wrappers> ready>"
       ];
-      path = [ pkgs.coreutils ];
+      path = [ pkgs.uutils-coreutils-noprefix ];
       restart = "on-error";
       readyOnStart = false;
       logging.enable = lib.mkDefault false;

@@ -223,7 +223,7 @@ in
       };
       testDeps = [
         pkgs.socat # for unix socket connections from tcl
-        pkgs.coreutils # for base64 decoding in shellExecute
+        pkgs.uutils-coreutils-noprefix # for base64 decoding in shellExecute
         pkgs.vde2 # for vde virtual networking
         pkgs.expect # for the test driver itself
       ];

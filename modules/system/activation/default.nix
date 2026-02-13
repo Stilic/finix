@@ -126,9 +126,9 @@ in
     system.activation.path =
       with pkgs;
       map lib.getBin [
-        coreutils
+        uutils-coreutils-noprefix
         gnugrep
-        findutils
+        uutils-findutils
         getent
         stdenv.cc.libc # nscd in update-users-groups.pl
         shadow
@@ -148,7 +148,7 @@ in
           cp ${config.system.activation.out} $out/activate
           cp ${config.boot.init.script} $out/init
 
-          ${pkgs.coreutils}/bin/ln -s ${config.environment.path} $out/sw
+          ${pkgs.uutils-coreutils-noprefix}/bin/ln -s ${config.environment.path} $out/sw
 
           substituteInPlace $out/activate --subst-var-by systemConfig $out
           substituteInPlace $out/init --subst-var-by systemConfig $out
@@ -160,12 +160,12 @@ in
           ) config.specialisation}
         ''
         + lib.optionalString config.boot.kernel.enable ''
-          ${pkgs.coreutils}/bin/ln -s ${config.boot.kernelPackages.kernel}/bzImage $out/kernel
-          ${pkgs.coreutils}/bin/ln -s ${config.system.modulesTree} $out/kernel-modules
-          ${pkgs.coreutils}/bin/ln -s ${config.hardware.firmware}/lib/firmware $out/firmware
+          ${pkgs.uutils-coreutils-noprefix}/bin/ln -s ${config.boot.kernelPackages.kernel}/bzImage $out/kernel
+          ${pkgs.uutils-coreutils-noprefix}/bin/ln -s ${config.system.modulesTree} $out/kernel-modules
+          ${pkgs.uutils-coreutils-noprefix}/bin/ln -s ${config.hardware.firmware}/lib/firmware $out/firmware
         ''
         + lib.optionalString config.boot.initrd.enable ''
-          ${pkgs.coreutils}/bin/ln -s ${config.boot.initrd.package}/initrd $out/initrd
+          ${pkgs.uutils-coreutils-noprefix}/bin/ln -s ${config.boot.initrd.package}/initrd $out/initrd
         ''
         + lib.optionalString config.finit.enable ''
           cp ${../../finit/switch-to-configuration.sh} $out/bin/switch-to-configuration
